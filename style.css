@@ -1,0 +1,117 @@
+body {
+    font-family: 'Georgia', serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+.envelope {
+    position: relative;
+    width: 300px;
+    height: 150px;
+    background-color: #ba1a1a;
+    border: 2px solid #ba1a1a;
+    border-radius: 5px;
+    overflow: hidden;
+    transition: height 1s ease-in-out;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.flap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background-color: #ba1a1a;
+    border-bottom: 6px solid #979797;
+    transform-origin: top;
+    transform: rotateX(0deg);
+    transition: transform 1s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    cursor: pointer; /* Adicionando um cursor para mostrar que é clicável */
+}
+
+.initials {
+    font-family: 'Cursive', serif;
+    font-size: 24px;
+    color: #a4a4a4;
+    letter-spacing: 5px;
+}
+
+.bowtie {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 15px;
+    background-color: #4b0082;
+    clip-path: polygon(0 0, 50% 50%, 0 100%, 100% 100%, 50% 50%, 100% 0);
+}
+
+.content {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    background-image: url('https://lh3.googleusercontent.com/pw/AP1GczPOHk1wHEv9Q5topveKGhQMLasOB8SIyzrfRfg4bT7i7nfy_HLemjz0DLKXNpgmxUzBR6GRKj1RgiCQ9AAFegRJwXRSRcgs-aoZT8S1Xf1OF7cEUAa1oGAZjxK33kaocrAzJHyGOkPODUioXGOi5GBFtw=w431-h607-s-no-gm?authuser=0'); /* Substitua pelo URL de uma imagem de fundo decorativa */
+    background-size: cover;
+    background-position: center;
+}
+
+.envelope.open .flap {
+    transform: rotateX(-180deg);
+}
+
+.envelope.open {
+    height: 400px; /* Aumenta a altura para revelar o conteúdo */
+}
+
+.envelope.open .content {
+    opacity: 1;
+}
+
+h1, h2, p {
+    margin: 10px 0;
+    color: #9e5691;
+}
+
+h1 {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.verse {
+    font-style: italic;
+    font-size: 14px;
+    margin-bottom: 20px;
+    color: #aa5db8;
+}
